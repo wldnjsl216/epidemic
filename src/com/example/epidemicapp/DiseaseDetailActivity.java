@@ -1,6 +1,8 @@
 package com.example.epidemicapp;
 
-import com.skp.Tmap.TMapCircle;
+import java.util.LinkedList;
+import java.util.List;
+
 import com.skp.Tmap.TMapMarkerItem;
 import com.skp.Tmap.TMapPoint;
 import com.skp.Tmap.TMapView;
@@ -11,17 +13,16 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Color;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.Window;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 public class DiseaseDetailActivity extends Activity {
 	private TMapView tmapview = null;
-	private double lat;
-	private double lon;
+	private LinkedList<TMapMarkerItem> markers = new LinkedList<TMapMarkerItem>();
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,38 +36,29 @@ public class DiseaseDetailActivity extends Activity {
         
         this._getLocation();
         
-        Context context = getApplicationContext();
-        CharSequence text = "lat: " + lat + ", lon: " + lon;
-        int duration = Toast.LENGTH_LONG;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-        
-        TMapCircle tcircle = new TMapCircle();
-        tcircle.setCenterPoint(new TMapPoint(lat, lon));
-        tcircle.setRadius(10000);
-        tcircle.setAreaColor(Color.RED);
-        tcircle.setLineColor(Color.RED);
-        tcircle.setAreaAlpha(50);
-        tcircle.setRadiusVisible(true);
-        
-        TMapMarkerItem titem = new TMapMarkerItem();
-        titem.setTMapPoint(new TMapPoint(lat, lon));
-        titem.setName("point1");
-        titem.setPosition(0.5f, 1.0f);
-        titem.setVisible(titem.VISIBLE);
-        
-        TMapMarkerItem titem2 = new TMapMarkerItem();
-        titem2.setTMapPoint(new TMapPoint(37.518644,126.969153));
-        titem2.setName("point2");
-        titem2.setPosition(0.5f, 1.0f);
-        titem2.setVisible(titem.VISIBLE);
-        
-
-        tmapview.setLocationPoint(lon, lat);
+        tmapview.setLocationPoint(SplashScreenActivity.DB.myUser.getLongitude(), SplashScreenActivity.DB.myUser.getLatitude());
         mapRelativeLayout.addView(tmapview);
-        tmapview.addTMapCircle("test circle", tcircle);
-        tmapview.addMarkerItem("test marker 1", titem);
-        tmapview.addMarkerItem("test marker 2", titem2);
+        
+        String selectQuery = "SELECT * FROM " + Consts.USER_TABLE;
+        SQLiteDatabase db = SplashScreenActivity.DB.myDbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        while (cursor.isAfterLast() == false) {
+        	//TODO: display on map
+        	int howsick = Integer.parseInt(cursor.getString(cursor.getColumnIndex(Consts.USER_HOW_SICK)));
+        	if (howsick > 0) {
+	        	double lat = Double.parseDouble(cursor.getString(cursor.getColumnIndex(Consts.USER_LAST_LAT)));
+	            double lon = Double.parseDouble(cursor.getString(cursor.getColumnIndex(Consts.USER_LAST_LON)));
+	            markers.addFirst(new TMapMarkerItem());
+	            markers.getFirst().setTMapPoint(new TMapPoint(lat, lon));
+	            markers.getFirst().setName(lat+","+"lon");
+	            markers.getFirst().setPosition(0.5f, 1.0f);
+	            markers.getFirst().setVisible(markers.getFirst().VISIBLE);
+	            tmapview.addMarkerItem(lat+","+lon, markers.getFirst());
+        	}
+        	cursor.moveToNext();
+        }
+        
         configureTMapView();
         
     }
@@ -95,8 +87,7 @@ public class DiseaseDetailActivity extends Activity {
 	
 	private void _getLocation() {
 	    // Get the location manager
-	    LocationManager locationManager = (LocationManager) 
-	            getSystemService(LOCATION_SERVICE);
+	    LocationManager locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
 	    Criteria criteria = new Criteria();
 	    String bestProvider = locationManager.getBestProvider(criteria, false);
 	    Location location = locationManager.getLastKnownLocation(bestProvider);
@@ -110,15 +101,14 @@ public class DiseaseDetailActivity extends Activity {
 
 	        public void onStatusChanged(String p, int status, Bundle extras) {}
 	    };
-	    locationManager
-	            .requestLocationUpdates(bestProvider, 0, 0, loc_listener);
+	    locationManager.requestLocationUpdates(bestProvider, 0, 0, loc_listener);
 	    location = locationManager.getLastKnownLocation(bestProvider);
 	    try {
-	        lat = location.getLatitude();
-	        lon = location.getLongitude();
+	        SplashScreenActivity.DB.myUser.setLatitude(location.getLatitude());
+	        SplashScreenActivity.DB.myUser.setLongitude(location.getLongitude());
 	    } catch (NullPointerException e) {
-	        lat = -1.0;
-	        lon = -1.0;
+	    	SplashScreenActivity.DB.myUser.setLatitude(location.getLatitude());
+	        SplashScreenActivity.DB.myUser.setLongitude(location.getLongitude());
 	    }
 	}
 

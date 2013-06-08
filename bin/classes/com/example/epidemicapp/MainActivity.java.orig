@@ -1,0 +1,59 @@
+package com.example.epidemicapp;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.util.DisplayMetrics;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
+import android.app.Activity;
+import android.content.Intent;
+<<<<<<< Updated upstream
+import android.content.Context;
+=======
+import android.database.Cursor;
+>>>>>>> Stashed changes
+
+public class MainActivity extends Activity {
+	public static DBUtil DB = null;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        setContentView(R.layout.activity_main);
+        DB = new DBUtil(getApplicationContext(),1);
+        
+        configureUserdiseaseList();
+    }
+    
+    private void configureUserdiseaseList() {
+		Cursor disCursor = DB.getUserDiseases(DB.myUser.getID());
+		TextView discount = (TextView) findViewById(R.id.statusDiseaseCount);
+//		discount.setText(disCursor.getCount()); //set disease count
+		Log.v("DEBUG","count = "+disCursor.getCount());
+		
+		
+	}
+
+
+
+	/** Called when the user clicks the Open News button */
+    public void openNews(View view) {
+    	((Button) findViewById(R.id.openNewsButton)).setBackgroundResource(R.drawable.main_view_vector_select_04_04);
+    	
+    	Intent intent = new Intent(this, NewsActivity.class);
+        startActivity(intent);
+    }
+    
+    /** Called when the user clicks the Open Disease Dictionary button */
+    public void openDiseaseList(View view) {
+    	((Button) findViewById(R.id.openDiseaseListButton)).setBackgroundResource(R.drawable.main_view_vector_select_06);
+    	
+    	Intent intent = new Intent(this, NewsActivity.class);
+        startActivity(intent);
+    }
+	
+}
