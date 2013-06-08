@@ -5,5 +5,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_menubar_margin">14dp</dimen>
     <dimen name="menubutton_size">25dp</dimen>
+    <dimen name="news_horizontal_margin">15dp</dimen>
+    <dimen name="news_vertical_margin">22dp</dimen>
 
 </resources>

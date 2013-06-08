@@ -2,10 +2,12 @@ package com.example.epidemicapp;
 
 import android.os.Bundle;
 import android.view.View;
+import android.util.DisplayMetrics;
 import android.view.Window;
 import android.widget.Button;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.Context;
 
 public class MainActivity extends Activity {
 

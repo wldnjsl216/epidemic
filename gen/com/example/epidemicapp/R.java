@@ -21,6 +21,8 @@ public final class R {
         public static final int activity_menubar_margin=0x7f040002;
         public static final int activity_vertical_margin=0x7f040001;
         public static final int menubutton_size=0x7f040003;
+        public static final int news_horizontal_margin=0x7f040004;
+        public static final int news_vertical_margin=0x7f040005;
     }
     public static final class drawable {
         public static final int detail_view_bg_02=0x7f020000;
@@ -61,10 +63,14 @@ public final class R {
         public static final int white_eyeballs=0x7f020023;
     }
     public static final class id {
-        public static final int action_settings=0x7f080007;
-        public static final int button1=0x7f080001;
+        public static final int action_settings=0x7f08000b;
+        public static final int closeNewsButton=0x7f080006;
+        public static final int firstcarrierokaybutton=0x7f080001;
         public static final int mapRelativeLayout=0x7f080000;
-        public static final int menu_settings=0x7f080006;
+        public static final int menu_settings=0x7f08000a;
+        public static final int newscontent1=0x7f080008;
+        public static final int newsimage1=0x7f080007;
+        public static final int noncarrierokaybutton=0x7f080009;
         public static final int openDiseaseListButton=0x7f080003;
         public static final int openNewsButton=0x7f080002;
         public static final int statusImgView=0x7f080005;
@@ -93,6 +99,7 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050001;
         public static final int menu_settings=0x7f050002;
+        public static final int news1=0x7f05000f;
         public static final int status0=0x7f05000b;
         public static final int status1=0x7f05000c;
         public static final int status2=0x7f05000d;

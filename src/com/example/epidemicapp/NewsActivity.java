@@ -2,7 +2,9 @@ package com.example.epidemicapp;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class NewsActivity extends Activity {
 
@@ -19,4 +21,9 @@ public class NewsActivity extends Activity {
 		return true;
 	}
 
+	public void closeNews(View view) {
+		findViewById(R.id.closeNewsButton).setBackgroundResource(R.drawable.dictionary_view_select_close_04);
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
+	}
 }
