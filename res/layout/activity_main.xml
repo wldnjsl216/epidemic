@@ -11,7 +11,7 @@
         android:layout_height="104dp"
         android:padding="@dimen/activity_menubar_margin"
         android:background="@drawable/main_view_vector_02" >
-        <ImageButton
+        <Button
 	        android:id="@+id/openNewsButton"
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignParentTop="true"
@@ -19,7 +19,7 @@
             android:layout_height="@dimen/menubutton_size"
 	        android:src="@drawable/main_view_vector_04"
 	        android:onClick="openNews" />
-        <ImageButton
+        <Button
             android:id="@+id/openDiseaseListButton"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"

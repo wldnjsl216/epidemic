@@ -2,7 +2,6 @@ package com.example.epidemicapp;
 
 import java.io.IOException;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;

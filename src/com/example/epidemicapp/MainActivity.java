@@ -12,24 +12,27 @@ import android.content.Intent;
 import android.database.Cursor;
 
 public class MainActivity extends Activity {
-	public static DBUtil DB = null;
+//	public static DBUtil DB = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        Log.v("DEBUG", "requested window feature");
 
         setContentView(R.layout.activity_main);
-        DB = new DBUtil(getApplicationContext(),1);
+        Log.v("DEBUG", "setContentView");
         configureStatus();
-        
+        Log.v("DEBUG", "configureStatus");
+//        DB = new DBUtil(getApplicationContext(),1);
         configureUserdiseaseList();
+        Log.v("DEBUG", "configureUserDisease");
     }
     
     private void configureStatus() {
     	ImageView view = (ImageView) findViewById(R.id.statusImgView);
     	
-    	int sick = 0; //TODO: set it to how sick
+    	int sick = SplashScreenActivity.DB.myUser.getHowSick(); //TODO: set it to how sick
     	if (sick == 0) view.setImageResource(R.drawable.hlevel_0);
     	else if (sick == 1) view.setImageResource(R.drawable.hlevel_1);
     	else if (sick == 2) view.setImageResource(R.drawable.hlevel_2);
@@ -37,9 +40,9 @@ public class MainActivity extends Activity {
     }
     
     private void configureUserdiseaseList() {
-		Cursor disCursor = DB.getUserDiseases(DB.myUser.getID());
+		Cursor disCursor = SplashScreenActivity.DB.getUserDiseases(SplashScreenActivity.DB.myUser.getID());
 		TextView discount = (TextView) findViewById(R.id.statusDiseaseCount);
-//		discount.setText(disCursor.getCount()); //set disease count
+		discount.setText(Integer.toString(disCursor.getCount())); //set disease count
 		Log.v("DEBUG","count = "+disCursor.getCount());
 		
 		
@@ -62,5 +65,7 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(this, NewsActivity.class);
         startActivity(intent);
     }
+    
+    
 	
 }

@@ -52,4 +52,8 @@ public class User {
 	public void setLongitude(double lon) {
 		mLoc.setLongitude(lon);
 	}
+	
+	public int getHowSick() {
+		return mHowSick;
+	}
 }

@@ -25,6 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NonCarrierActivity"
+            android:label="@string/title_activity_non_carrier" >
+        </activity>
+        <activity
+            android:name=".FirstCarrierActivity"
+            android:label="@string/title_activity_first_carrier" >
+        </activity>
+        <activity
+            android:name=".NewsActivity"
+            android:label="@string/title_activity_news" >
+        </activity>
         
     </application>
     
