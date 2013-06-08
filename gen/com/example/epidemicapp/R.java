@@ -59,11 +59,12 @@ public final class R {
         public static final int white_eyeballs=0x7f020023;
     }
     public static final class id {
-        public static final int action_settings=0x7f080004;
+        public static final int action_settings=0x7f080005;
+        public static final int button1=0x7f080001;
         public static final int mapRelativeLayout=0x7f080000;
-        public static final int menu_settings=0x7f080003;
-        public static final int openDiseaseListButton=0x7f080002;
-        public static final int openNewsButton=0x7f080001;
+        public static final int menu_settings=0x7f080004;
+        public static final int openDiseaseListButton=0x7f080003;
+        public static final int openNewsButton=0x7f080002;
     }
     public static final class layout {
         public static final int activity_disease_detail=0x7f030000;
