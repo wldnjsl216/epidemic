@@ -53,11 +53,13 @@ public class MainActivity extends Activity {
         TMapMarkerItem titem = new TMapMarkerItem();
         titem.setTMapPoint(new TMapPoint(lat, lon));
         titem.setName("point1");
+        titem.setPosition(0.5f, 1.0f);
         titem.setVisible(titem.VISIBLE);
         
         TMapMarkerItem titem2 = new TMapMarkerItem();
         titem2.setTMapPoint(new TMapPoint(37.518644,126.969153));
         titem2.setName("point2");
+        titem2.setPosition(0.5f, 1.0f);
         titem2.setVisible(titem.VISIBLE);
         
         tmapview.setLocationPoint(lon, lat);
