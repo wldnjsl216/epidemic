@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
 import android.content.Intent;
@@ -20,8 +21,19 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
         DB = new DBUtil(getApplicationContext(),1);
+        configureStatus();
         
         configureUserdiseaseList();
+    }
+    
+    private void configureStatus() {
+    	ImageView view = (ImageView) findViewById(R.id.statusImgView);
+    	
+    	int sick = 0; //TODO: set it to how sick
+    	if (sick == 0) view.setImageResource(R.drawable.hlevel_0);
+    	else if (sick == 1) view.setImageResource(R.drawable.hlevel_1);
+    	else if (sick == 2) view.setImageResource(R.drawable.hlevel_2);
+    	else view.setImageResource(R.drawable.hlevel_3);
     }
     
     private void configureUserdiseaseList() {
