@@ -1,6 +1,7 @@
 package com.example.epidemicapp;
 
 import com.skp.Tmap.TMapCircle;
+import com.skp.Tmap.TMapMarkerItem;
 import com.skp.Tmap.TMapPoint;
 import com.skp.Tmap.TMapView;
 
@@ -11,6 +12,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.view.Menu;
 import android.widget.RelativeLayout;
@@ -48,9 +50,21 @@ public class MainActivity extends Activity {
         tcircle.setAreaAlpha(50);
         tcircle.setRadiusVisible(true);
         
+        TMapMarkerItem titem = new TMapMarkerItem();
+        titem.setTMapPoint(new TMapPoint(lat, lon));
+        titem.setName("point1");
+        titem.setVisible(titem.VISIBLE);
+        
+        TMapMarkerItem titem2 = new TMapMarkerItem();
+        titem2.setTMapPoint(new TMapPoint(37.518644,126.969153));
+        titem2.setName("point2");
+        titem2.setVisible(titem.VISIBLE);
+        
         tmapview.setLocationPoint(lon, lat);
         mapRelativeLayout.addView(tmapview);
         tmapview.addTMapCircle("test circle", tcircle);
+        tmapview.addMarkerItem("test marker 1", titem);
+        tmapview.addMarkerItem("test marker 2", titem2);
         configureTMapView();
         
     }
