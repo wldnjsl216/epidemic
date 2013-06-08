@@ -1,5 +1,7 @@
 package com.example.epidemicapp;
 
+import com.skp.Tmap.TMapCircle;
+import com.skp.Tmap.TMapPoint;
 import com.skp.Tmap.TMapView;
 
 import android.location.Criteria;
@@ -9,6 +11,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.Menu;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -37,8 +40,17 @@ public class MainActivity extends Activity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
         
+        TMapCircle tcircle = new TMapCircle();
+        tcircle.setCenterPoint(new TMapPoint(lat, lon));
+        tcircle.setRadius(10000);
+        tcircle.setAreaColor(Color.RED);
+        tcircle.setLineColor(Color.RED);
+        tcircle.setAreaAlpha(50);
+        tcircle.setRadiusVisible(true);
+        
         tmapview.setLocationPoint(lon, lat);
         mapRelativeLayout.addView(tmapview);
+        tmapview.addTMapCircle("test circle", tcircle);
         configureTMapView();
         
     }
