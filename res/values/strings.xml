@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">EpidemicApp</string>
+    <string name="app_name">Epidamnit</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_splash_screen">Epidamnit</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_first_carrier">FirstCarrierActivity</string>
     <string name="title_activity_non_carrier">NonCarrierActivity</string>
