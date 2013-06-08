@@ -44,10 +44,36 @@
         <ImageView 
             android:layout_marginTop="17dp"
             android:id="@+id/statusImgView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="210dp"
+            android:layout_width="fill_parent"
             android:src="@drawable/main_view_vector_12"/>
-
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textColor="#1b1b1b"
+                android:text="You have " />
+            <TextView
+                android:id="@+id/statusDiseaseCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textColor="#FF6F29"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textColor="#1b1b1b"
+                android:text=" epidemic!" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

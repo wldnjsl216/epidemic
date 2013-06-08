@@ -3,12 +3,17 @@ package com.example.epidemicapp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.util.DisplayMetrics;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.app.Activity;
 import android.content.Intent;
+<<<<<<< Updated upstream
+import android.content.Context;
+=======
 import android.database.Cursor;
+>>>>>>> Stashed changes
 
 public class MainActivity extends Activity {
 	public static DBUtil DB = null;

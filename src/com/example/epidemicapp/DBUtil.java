@@ -60,6 +60,20 @@ public class DBUtil {
 		return myself;
 	}
 	
+	public Cursor getUserDiseases(int userid) {
+		String selectQuery = "SELECT * FROM " + Consts.USER_DISEASE_TABLE + " WHERE " +Consts.USER_DISEASE_USER_ID + "="+userid;
+		SQLiteDatabase db = myDbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+		return cursor;
+	}
+	
+	public Cursor getNews() {
+		String selectQuery = "SELECT * FROM " + Consts.USER_DISEASE_TABLE;
+		SQLiteDatabase db = myDbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+		return cursor;
+	}
+	
 //	public User createUser(Location loc) {
 //	User user = new User(loc);
 //	
