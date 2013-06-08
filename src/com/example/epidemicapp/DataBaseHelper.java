@@ -10,6 +10,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DataBaseHelper extends SQLiteOpenHelper{
 	 
@@ -70,6 +71,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     private boolean checkDataBase(){
  
     	SQLiteDatabase checkDB = null;
+    	Log.v("DEBUG","ENTERED CHECKDATABASE");
  
     	try{
     		String myPath = DB_PATH + DB_NAME;
@@ -78,7 +80,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     	}catch(SQLiteException e){
  
     		//database does't exist yet.
- 
     	}
  
     	if(checkDB != null){

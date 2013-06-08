@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class DBUtil {
 	public DataBaseHelper myDbHelper = null;
@@ -34,7 +35,10 @@ public class DBUtil {
 	 
 	 	}
 	 	
-	 	getUser(userid);
+	 	myUser = getUser(userid);
+
+
+ 		Log.v("DEBUG","within DBUtil, after getUser!!");
    }
 	
 	private User getUser(int userid) {

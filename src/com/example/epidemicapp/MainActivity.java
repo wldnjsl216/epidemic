@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -70,6 +71,9 @@ public class MainActivity extends Activity {
         
         //remove
         DBUtil util = new DBUtil(getApplicationContext(),0);
+
+ 		assert (util != null);
+ 		assert (util.myUser != null);
         CharSequence usertext = "id: " + util.myUser.getID() + ", user_lat: " + util.myUser.getLatitude();
         toast = Toast.makeText(context, usertext, duration);
         toast.show();

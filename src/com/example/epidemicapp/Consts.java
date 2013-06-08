@@ -22,11 +22,12 @@ public final class Consts {
 	public static final String NEWS_CONTEXT = "context";
 	
 	public static final String USER_DISEASE_TABLE = "user_disease";
+	public static final String USER_DISEASE_ID = "_id";
 	public static final String USER_DISEASE_USER_ID = "user_id";
 	public static final String USER_DISEASE_DISEASE_ID = "disease_id";
 	public static final String USER_DISEASE_DATE = "date";
-	public static final String USER_DISEASE_INFECTED_LATITUDE = "infected_latitude";
-	public static final String USER_DISEASE_INFECTED_LONGITUDE = "infected_longitude";
+	public static final String USER_DISEASE_INFECTED_LATITUDE = "latitude";
+	public static final String USER_DISEASE_INFECTED_LONGITUDE = "longitude";
 	
 
 }
