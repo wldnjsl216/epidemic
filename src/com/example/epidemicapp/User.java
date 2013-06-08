@@ -6,13 +6,23 @@ public class User {
 	private static int USER_ID_COUNTER = 0;
 	
 	private int mID = -1;
-	private Location mLoc;
-	private int mLevel = 0;
+	private Location mLoc = null;
+	private int mHowSick = 0, mContCount = 0;
+	private double mLatitude = 0, mLongitude = 0;
 	
-	public User(Location loc) {
-		mID = createUserID();
+	public User(int id,Location loc) {
+		mID = id;
 		mLoc = loc;
-		mLevel = 0;
+		mHowSick = 0;
+		mContCount = 0;
+	}
+	
+	public User(int id,double lat, double lon, int howsick, int contcount) {
+		mID = id;
+		mLatitude = lat;
+		mLongitude = lon;
+		mHowSick = howsick;
+		mContCount = contcount;
 	}
 	
 	private int createUserID() {
@@ -26,11 +36,13 @@ public class User {
 	}
 	
 	public double getLatitude() {
-		return mLoc.getLatitude();
+		if (mLoc != null) return mLoc.getLatitude();
+		else return mLatitude;
 	}
 	
 	public double getLongitude() {
-		return mLoc.getLongitude();
+		if (mLoc != null) return mLoc.getLongitude();
+		else return mLongitude;
 	}
 	
 	public void setLatitude(double lat) {

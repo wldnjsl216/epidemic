@@ -17,10 +17,17 @@ class DBHelper extends SQLiteOpenHelper {
 //        private static final String USER_TITLE2 = "title";
 	
 	public static final String DISEASE_TABLE = "disease";
+	public static final String DISEASE_ID = "_id";
 	public static final String DISEASE_NAME = "name";
 	
-	public static final String USER_TABLE_CREATION = "create table " + USER_TABLE + " (" + USER_ID + " integer primary key autoincrement, " + USER_LAST_LAT + " integer not null);";
-    public static final String DISEASE_TABLE_CREATION = "table2 create statement";
+	public static final String USER_TABLE_CREATION = "create table " + USER_TABLE + " (" +
+			USER_ID + " integer primary key autoincrement, " +
+			USER_LAST_LAT + " double not null, " +
+			USER_LAST_LON + " double not null);";
+    public static final String DISEASE_TABLE_CREATION = "create table " + DISEASE_TABLE + " (" +
+			DISEASE_ID + " integer primary key autoincrement, " +
+			DISEASE_NAME + " text not null);";
+	private Object db;
  
 	public DBHelper(Context context) {
 		super(context, DB_NAME, null, DB_VERSION);
@@ -30,28 +37,49 @@ class DBHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(USER_TABLE_CREATION);
 		db.execSQL(DISEASE_TABLE_CREATION);
+		
+//		boolean dbExist = checkDataBase();
+//		if (dbExist) {
+//			//do nothing
+//		} else {
+//			this.getReadableDatabase();
+//			try {
+//				 
+//    			copyDataBase();
+// 
+//    		} catch (IOException e) {
+// 
+//        		throw new Error("Error copying database");
+// 
+//        	}
+//		}
 	}
  
+	private boolean checkDataBase() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int paramInt1, int paramInt2) {
 		db.execSQL("DROP TABLE " + USER_TABLE_CREATION + ";");
 		db.execSQL("DROP TABLE " + DISEASE_TABLE_CREATION + ";");
 		onCreate(db);
 	}
-	
-	public User createUser(Location loc) {
-		User user = new User(loc);
 		
-		SQLiteDatabase db = this.getWritableDatabase();
-		 
-	    ContentValues values = new ContentValues();
-	    values.put(USER_LAST_LAT, user.getLatitude()); // User Latitude
-	    values.put(USER_LAST_LON, user.getLongitude()); // User Longitude
-	 
-	    // Inserting Row
-	    db.insert(USER_TABLE, null, values);
-	    return user;
-	}
+//	public User createUser(Location loc) {
+//		User user = new User(loc);
+//		
+//		SQLiteDatabase db = this.getWritableDatabase();
+//		 
+//	    ContentValues values = new ContentValues();
+//	    values.put(USER_LAST_LAT, user.getLatitude()); // User Latitude
+//	    values.put(USER_LAST_LON, user.getLongitude()); // User Longitude
+//	 
+//	    // Inserting Row
+//	    db.insert(USER_TABLE, null, values);
+//	    return user;
+//	}
 	
 	public int updateUser(User user) {
 	    SQLiteDatabase db = this.getWritableDatabase();

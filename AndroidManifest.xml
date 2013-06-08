@@ -9,6 +9,7 @@
         android:targetSdkVersion="15" />
 
     <application
+        android:name="com.example.EpidemicApp"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
