@@ -62,14 +62,9 @@ public class MainActivity extends Activity {
         titem2.setPosition(0.5f, 1.0f);
         titem2.setVisible(titem.VISIBLE);
         
-        tmapview.setLocationPoint(lon, lat);
-        mapRelativeLayout.addView(tmapview);
-        tmapview.addTMapCircle("test circle", tcircle);
-        tmapview.addMarkerItem("test marker 1", titem);
-        tmapview.addMarkerItem("test marker 2", titem2);
-        configureTMapView();
-        
         //remove
+//        Context context = getApplicationContext();
+//        int duration = Toast.LENGTH_LONG;
         DBUtil util = new DBUtil(getApplicationContext(),0);
 
  		assert (util != null);
@@ -77,6 +72,13 @@ public class MainActivity extends Activity {
         CharSequence usertext = "id: " + util.myUser.getID() + ", user_lat: " + util.myUser.getLatitude();
         toast = Toast.makeText(context, usertext, duration);
         toast.show();
+        
+        tmapview.setLocationPoint(lon, lat);
+        mapRelativeLayout.addView(tmapview);
+        tmapview.addTMapCircle("test circle", tcircle);
+        tmapview.addMarkerItem("test marker 1", titem);
+        tmapview.addMarkerItem("test marker 2", titem2);
+        configureTMapView();
         
     }
 
