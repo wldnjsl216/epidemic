@@ -3,15 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@android:style/Theme.NoTitleBar" >
-    
-
-    
-    <RelativeLayout
-        android:id="@+id/mapRelativeLayout"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@android:color/white"
-        android:paddingTop="1dip" >
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:paddingTop="28px"
+        android:paddingLeft="28px"
+        android:paddingRight="28px"
+        android:background="@drawable/main_view_vector_02" >
+        <ImageButton
+	        android:id="@+id/openNewsButton"
+	        android:layout_gravity="top|left"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/main_view_vector_04" />
+        <ImageButton
+            android:id="@+id/openDiseaseListButton"
+            android:layout_gravity="top|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main_view_vector_02" />
+    </LinearLayout>
 
 </RelativeLayout>
