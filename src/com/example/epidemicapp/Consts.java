@@ -1,7 +1,7 @@
 package com.example.epidemicapp;
 
 public final class Consts {
-	public static String DB_NAME = "epidemic.db";
+	public static String DB_NAME = "epidemic.sqlite";
 	
 	public static final String USER_TABLE = "user";
 	public static final String USER_ID = "_id";

@@ -69,10 +69,10 @@ public class MainActivity extends Activity {
         configureTMapView();
         
         //remove
-//        DBUtil util = new DBUtil(getApplicationContext(),0);
-//        CharSequence usertext = "id: " + util.myUser.getID() + ", user_lat: " + util.myUser.getLatitude();
-//        toast = Toast.makeText(context, usertext, duration);
-//        toast.show();
+        DBUtil util = new DBUtil(getApplicationContext(),0);
+        CharSequence usertext = "id: " + util.myUser.getID() + ", user_lat: " + util.myUser.getLatitude();
+        toast = Toast.makeText(context, usertext, duration);
+        toast.show();
         
     }
 
