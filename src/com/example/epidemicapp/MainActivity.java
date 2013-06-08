@@ -19,7 +19,6 @@ public class MainActivity extends Activity {
 	private double lat;
 	private double lon;
 	
-//	TMapGpsManager gps;// = new TMapGpsManager(MainActivity.this);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,22 +29,19 @@ public class MainActivity extends Activity {
         RelativeLayout mapRelativeLayout = (RelativeLayout)findViewById(R.id.mapRelativeLayout);
         
         tmapview = new TMapView(this);
-        mapRelativeLayout.addView(tmapview);
-        configureTMapView();
         
         this._getLocation();
+        
         Context context = getApplicationContext();
         CharSequence text = "lat: " + lat + ", lon: " + lon;
         int duration = Toast.LENGTH_LONG;
-
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
         
-//        gps = new TMapGpsManager(this);
-//		gps.setMinTime(1000);
-//		gps.setMinDistance(5);
-//		gps.setProvider(gps.GPS_PROVIDER);
-//		gps.OpenGps();
+        tmapview.setLocationPoint(lon, lat);
+        mapRelativeLayout.addView(tmapview);
+        configureTMapView();
+        
     }
 
     private void configureTMapView() {
@@ -69,21 +65,7 @@ public class MainActivity extends Activity {
         return true;
     }
 	
-	/*private void _getLocation() {
-	    // Get the location manager
-	    LocationManager locationManager = (LocationManager) 
-	            getSystemService(LOCATION_SERVICE);
-	    Criteria criteria = new Criteria();
-	    String bestProvider = locationManager.getBestProvider(criteria, false);
-	    Location location = locationManager.getLastKnownLocation(bestProvider);
-	    try {
-	        lat = location.getLatitude();
-	        lon = location.getLongitude();
-	    } catch (NullPointerException e) {
-	        lat = -1.0;
-	        lon = -1.0;
-	    }
-	}*/
+	
 	private void _getLocation() {
 	    // Get the location manager
 	    LocationManager locationManager = (LocationManager) 
@@ -113,8 +95,4 @@ public class MainActivity extends Activity {
 	    }
 	}
 	
-//	public void onLocationChange(android.location.Location location){
-//		double lat = location.getLatitude();
-//		double lon = location.getLongitude();
-//	}
 }
