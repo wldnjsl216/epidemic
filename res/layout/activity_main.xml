@@ -1,27 +1,52 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d7d7d9"
     android:theme="@android:style/Theme.NoTitleBar" >
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="28px"
-        android:paddingLeft="28px"
-        android:paddingRight="28px"
+        android:padding="@dimen/activity_menubar_margin"
         android:background="@drawable/main_view_vector_02" >
         <ImageButton
 	        android:id="@+id/openNewsButton"
-	        android:layout_gravity="top|left"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 	        android:src="@drawable/main_view_vector_04" />
         <ImageButton
             android:id="@+id/openDiseaseListButton"
-            android:layout_gravity="top|right"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/main_view_vector_02" />
+            android:src="@drawable/main_view_vector_06" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" >
+
+        <TextView
+            android:id="@+id/statusTxtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status0"
+            android:layout_marginEnd="12dp" />
+        <ImageView 
+            android:id="@+id/statusImgView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main_view_vector_12"/>
+
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
