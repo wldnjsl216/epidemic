@@ -45,6 +45,18 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
     	if(dbExist){
     		//do nothing - database already exist
+    		//temp FIX: do everything like the else case
+    		this.getReadableDatabase();
+    		 
+        	try {
+ 
+    			copyDataBase();
+ 
+    		} catch (IOException e) {
+ 
+        		throw new Error("Error copying database");
+ 
+        	}
     	}else{
  
     		//By calling this method and empty database will be created into the default system path
