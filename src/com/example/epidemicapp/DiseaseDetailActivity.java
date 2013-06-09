@@ -38,12 +38,12 @@ public class DiseaseDetailActivity extends Activity {
 //		int pid = Integer.parseInt(getIntent().getExtras().getString("picture id"));
 		int pid = getIntent().getExtras().getInt("picture id");
 		
-		ImageView iview = (ImageView)findViewById(R.id.diseaseSmallImg);
+		/*ImageView iview = (ImageView)findViewById(R.id.diseaseSmallImg);
 		iview.setImageResource(pid);
 		TextView nameview = (TextView)findViewById(R.id.diseaseDetailTxt);
-		nameview.setText(diseaseName);
-		TextView perview = (TextView)findViewById(R.id.diseaseDetailPercent);
-		perview.setText(diseasePercent);
+		nameview.setText(diseaseName);*/
+		/*TextView perview = (TextView)findViewById(R.id.diseaseDetailPercent);
+		perview.setText(diseasePercent);*/
 
         RelativeLayout mapRelativeLayout = (RelativeLayout)findViewById(R.id.mapRelativeLayout);
         Log.v("DEBUG", "mapRelativeLayout");

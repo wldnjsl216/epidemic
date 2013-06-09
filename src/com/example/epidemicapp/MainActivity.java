@@ -66,6 +66,29 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
     
-    
+    public void clickDisease1(View view) {
+		Intent intent = new Intent(this, DiseaseDetailActivity.class);
+		Bundle b = new Bundle();
+        b = toBundle(SplashScreenActivity.DB.getDiseaseName(1), 58, R.drawable.reggae_armpit);
+        intent.putExtra("Disease Bundle", b);
+	    startActivity(intent);
+	}
+
+	public void clickDisease2(View view) {
+		Intent intent = new Intent(this, DiseaseDetailActivity.class);
+		Bundle b = new Bundle();
+        b = toBundle(SplashScreenActivity.DB.getDiseaseName(2), 79, R.drawable.meat_tasting_fingertips);
+        intent.putExtra("Disease Bundle", b);
+	    startActivity(intent);
+	}
+	
+	private Bundle toBundle(String diseaseName, int percentage, int pid) {
+		Bundle b = new Bundle();
+		b.putString("disease name", diseaseName);
+		b.putString("percentage", Integer.toString(percentage));
+//		b.putString("picture id", Integer.toString(pid));
+		b.putInt("picture id", (Integer)pid);
+		return b;
+	}
 	
 }

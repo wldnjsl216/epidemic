@@ -18,6 +18,7 @@
             android:layout_width="@dimen/menubutton_size"
             android:layout_height="@dimen/menubutton_size"
             android:src="@drawable/main_view_vector_04"
+            android:background="@drawable/main_view_vector_04"
             android:onClick="openNews" />
         <Button
             android:id="@+id/openDiseaseListButton"
@@ -26,6 +27,7 @@
             android:layout_width="@dimen/menubutton_size"
             android:layout_height="@dimen/menubutton_size"
             android:src="@drawable/main_view_vector_06"
+            android:background="@drawable/main_view_vector_06"
             android:onClick="openDiseaseList" />
 
     </RelativeLayout>
@@ -78,7 +80,7 @@
         
         <LinearLayout 
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
@@ -87,7 +89,7 @@
 	            android:layout_width="50dp"
 	            android:layout_height="50dp"
 	            android:background="@drawable/meat_tasting_fingertips"
-	            android:onClick="clearDisease2"
+	            android:onClick="clickDisease2"
                  />
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -96,9 +98,9 @@
                 <TextView 
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
-	                android:text=""
+	                android:text="@string/disease2"
 	                android:textColor="#b1b1b1"
-	                android:textSize="20sp" />
+	                android:textSize="18sp" />
                 <LinearLayout 
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content" >
@@ -106,13 +108,55 @@
 	                    android:layout_width="wrap_content"
 	                    android:layout_height="wrap_content"
 	                    android:text="7"
-	                    android:textSize="20sp"
+	                    android:textSize="18sp"
 	                    android:textColor="#ff6f29" />
                     <TextView 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="일 후 자연치유됩니다."
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:textColor="#797979" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:background="@drawable/main_view_vector_list_bg_15" >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/reggae_armpit"
+                android:onClick="clickDisease1"
+                 />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/disease1"
+                    android:textColor="#b1b1b1"
+                    android:textSize="18sp" />
+                <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9"
+                        android:textSize="18sp"
+                        android:textColor="#ff6f29" />
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="일 후 자연치유됩니다."
+                        android:textSize="18sp"
                         android:textColor="#797979" />
                 </LinearLayout>
             </LinearLayout>
@@ -120,3 +164,4 @@
     </LinearLayout>
 
 </LinearLayout>
+

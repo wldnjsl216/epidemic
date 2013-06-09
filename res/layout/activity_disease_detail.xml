@@ -18,7 +18,7 @@
 	        android:layout_alignParentTop="true"
 	        android:background="@android:color/white" >
 	    </RelativeLayout>
-	    
+	    <!--  
 	    <LinearLayout 
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
 	            android:textSize="17sp"
 	            android:textColor="#b1b1b1"
 	            android:text="" />
-	    </LinearLayout>
+	    </LinearLayout> -->
 	    <LinearLayout 
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             android:textColor="#ff6f29"
             android:layout_toLeftOf="@+id/percentimg"
             android:layout_alignParentBottom="true"
-            android:text="0" />
+            android:text="49" />
         <ImageView 
             android:id="@+id/percentimg"
             android:background="@drawable/detail_view_percent_04"
