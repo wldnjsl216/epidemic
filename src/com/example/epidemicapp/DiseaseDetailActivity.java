@@ -35,7 +35,8 @@ public class DiseaseDetailActivity extends Activity {
 		
 		String diseaseName = getIntent().getExtras().getString("disease name");
 		String diseasePercent = getIntent().getExtras().getString("percentage");
-		int pid = Integer.parseInt(getIntent().getExtras().getString("picture id"));
+//		int pid = Integer.parseInt(getIntent().getExtras().getString("picture id"));
+		int pid = getIntent().getExtras().getInt("picture id");
 		
 		ImageView iview = (ImageView)findViewById(R.id.diseaseSmallImg);
 		iview.setImageResource(pid);

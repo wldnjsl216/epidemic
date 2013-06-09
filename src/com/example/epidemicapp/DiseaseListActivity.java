@@ -60,7 +60,8 @@ public class DiseaseListActivity extends Activity {
 		Bundle b = new Bundle();
 		b.putString("disease name", diseaseName);
 		b.putString("percentage", Integer.toString(percentage));
-		b.putString("picture id", Integer.toString(pid));
+//		b.putString("picture id", Integer.toString(pid));
+		b.putInt("picture id", (Integer)pid);
 		return b;
 	}
 
