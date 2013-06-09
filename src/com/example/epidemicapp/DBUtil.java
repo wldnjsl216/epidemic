@@ -73,6 +73,19 @@ public class DBUtil {
 		return cursor;
 	}
 	
+	public String getDiseaseName(int disease_id) {
+		String selectQuery = "SELECT * FROM " + Consts.DISEASE_TABLE + " WHERE " +Consts.DISEASE_ID + "="+disease_id;
+		SQLiteDatabase db = myDbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        
+        String name = null;
+        if (null != cursor && cursor.moveToFirst()) {
+        	name = cursor.getString(cursor.getColumnIndex(Consts.USER_CONT_COUNT));
+        }
+
+        return name;
+	}
+	
 //	public User createUser(Location loc) {
 //	User user = new User(loc);
 //	

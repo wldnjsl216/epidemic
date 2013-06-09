@@ -1,17 +1,177 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#d7d7d9"
+    android:orientation="vertical"
     tools:context=".DiseaseListActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="24dp"
+        android:background="#ff8d22"
+        android:onClick="clickDisease0" >
 
-</RelativeLayout>
+	    <ImageView 
+	        android:id="@+id/disimg0"
+	        android:layout_width="40dp"
+	        android:layout_height="40dp"
+	        android:layout_alignParentLeft="true"
+	        android:src="@drawable/two_blue_tongues"
+	        />
+	    <TextView
+	        android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_toRightOf="@+id/disimg0"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="@string/disease0" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="45sp"
+            android:textColor="#ffffff"
+            android:layout_toLeftOf="@+id/dispercent0"
+            android:text="41" />
+        <TextView
+            android:id="@+id/dispercent0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="%" />
+	
+	</RelativeLayout>
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="24dp"
+        android:background="#ff9d42"
+        android:onClick="clickDisease1" >
+        <ImageView
+            android:id="@+id/disimg1" 
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/reggae_armpit"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_toRightOf="@+id/disimg1"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="@string/disease1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="45sp"
+            android:textColor="#ffffff"
+            android:layout_toLeftOf="@+id/dispercent1"
+            android:text="58" />
+        <TextView
+            android:id="@+id/dispercent1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="%" />
+    
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="24dp"
+        android:background="#ffad62"
+        android:onClick="clickDisease2" >
+        <ImageView 
+            android:id="@+id/disimg2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/meat_tasting_fingertips"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_toRightOf="@+id/disimg2"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="@string/disease2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="45sp"
+            android:textColor="#ffffff"
+            android:layout_toLeftOf="@+id/dispercent2"
+            android:text="79" />
+        <TextView
+            android:id="@+id/dispercent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="%" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="24dp"
+        android:background="#ffbd82"
+        android:onClick="clickDisease3" >
+        <ImageView 
+            android:id="@+id/disimg3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/white_eyeballs"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_toRightOf="@+id/disimg3"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="@string/disease3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="45sp"
+            android:textColor="#ffffff"
+            android:layout_toLeftOf="@+id/dispercent3"
+            android:text="42" />
+        <TextView
+            android:id="@+id/dispercent3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="%" />
+    </RelativeLayout>
+</LinearLayout>
+

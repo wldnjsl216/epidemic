@@ -17,5 +17,9 @@
     <string name="status2">아프다... 병원에라도 가볼까</string>
     <string name="status3">여긴 어디? 나는 누구?ㅠㅠ</string>
     <string name="news1">Seoul, Korea에서 소고기맛 손톱이 발생하였습니다.</string>
+    <string name="disease0">갈라진 하늘색 돌기 난 혓바닥</string>
+    <string name="disease1">키만큼 자라는 레게 겨드랑이 털</string>
+    <string name="disease2">소고기맛 손톱</string>
+    <string name="disease3">하얀색 눈동자</string>
 
 </resources>
