@@ -46,11 +46,13 @@ public class User {
 	}
 	
 	public void setLatitude(double lat) {
-		mLoc.setLatitude(lat);
+		//mLoc.setLatitude(lat);
+		mLatitude = lat;
 	}
 	
 	public void setLongitude(double lon) {
-		mLoc.setLongitude(lon);
+		//mLoc.setLongitude(lon);
+		mLongitude = lon;
 	}
 	
 	public int getHowSick() {

@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
     public void openDiseaseList(View view) {
     	((Button) findViewById(R.id.openDiseaseListButton)).setBackgroundResource(R.drawable.main_view_vector_select_06);
     	
-    	Intent intent = new Intent(this, NewsActivity.class);
+    	Intent intent = new Intent(this, DiseaseDetailActivity.class);
         startActivity(intent);
     }
     

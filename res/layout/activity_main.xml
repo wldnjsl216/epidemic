@@ -25,7 +25,8 @@
             android:layout_alignParentTop="true"
             android:layout_width="@dimen/menubutton_size"
             android:layout_height="@dimen/menubutton_size"
-            android:src="@drawable/main_view_vector_06" />
+            android:src="@drawable/main_view_vector_06"
+            android:onClick="openDiseaseList" />
 
     </RelativeLayout>
 
