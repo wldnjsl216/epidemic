@@ -31,8 +31,8 @@ public class DiseaseDetailActivity extends Activity {
 		setContentView(R.layout.activity_disease_detail);
 		Log.v("DEBUG", "set content view");
 		
-		int did = getIntent().getExtras().getInt("key");
-		SplashScreenActivity.DB.getDiseaseName(did);
+//		int did = getIntent().getExtras().getInt("key");
+//		SplashScreenActivity.DB.getDiseaseName(did);
 
         RelativeLayout mapRelativeLayout = (RelativeLayout)findViewById(R.id.mapRelativeLayout);
         Log.v("DEBUG", "mapRelativeLayout");

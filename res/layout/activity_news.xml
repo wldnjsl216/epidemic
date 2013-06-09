@@ -20,6 +20,7 @@
             android:layout_width="@dimen/menubutton_size"
             android:layout_height="@dimen/menubutton_size"
             android:src="@drawable/dictionary_view_close_04"
+            android:background="@drawable/dictionary_view_close_04"
             android:onClick="closeNews" />
 
     </RelativeLayout>
