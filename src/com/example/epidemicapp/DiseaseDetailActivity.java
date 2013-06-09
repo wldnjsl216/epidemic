@@ -16,7 +16,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.Menu;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class DiseaseDetailActivity extends Activity {
 	private TMapView tmapview = null;
@@ -31,8 +33,16 @@ public class DiseaseDetailActivity extends Activity {
 		setContentView(R.layout.activity_disease_detail);
 		Log.v("DEBUG", "set content view");
 		
-//		int did = getIntent().getExtras().getInt("key");
-//		SplashScreenActivity.DB.getDiseaseName(did);
+		String diseaseName = getIntent().getExtras().getString("disease name");
+		String diseasePercent = getIntent().getExtras().getString("percentage");
+		int pid = Integer.parseInt(getIntent().getExtras().getString("picture id"));
+		
+		ImageView iview = (ImageView)findViewById(R.id.diseaseSmallImg);
+		iview.setImageResource(pid);
+		TextView nameview = (TextView)findViewById(R.id.diseaseDetailTxt);
+		nameview.setText(diseaseName);
+		TextView perview = (TextView)findViewById(R.id.diseaseDetailPercent);
+		perview.setText(diseasePercent);
 
         RelativeLayout mapRelativeLayout = (RelativeLayout)findViewById(R.id.mapRelativeLayout);
         Log.v("DEBUG", "mapRelativeLayout");

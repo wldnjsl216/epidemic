@@ -3,31 +3,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="#6b6b6c"
+    android:background="#6b6b6b"
     tools:context=".DiseaseDetailActivity" >
-
-    <RelativeLayout
-        android:id="@+id/mapRelativeLayout"
-        android:layout_width="325dp"
-        android:layout_height="488dp"
-        android:background="@android:color/white"
-        android:layout_alignParentTop="true" >
-    </RelativeLayout>
-    
-    <LinearLayout 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-        <ImageView 
-            android:id="@+id/diseaseSmallImg"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-        <TextView 
-            android:id="@+id/diseaseDetailTxt"
-            android:layout_marginLeft="13dp"
+    <RelativeLayout 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent"
+        android:layout_margin="8dp"
+        android:background="@drawable/detail_view_bg_02">
+        <RelativeLayout
+	        android:id="@+id/mapRelativeLayout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="400dp"
+	        android:layout_margin="10dp"
+	        android:layout_alignParentTop="true"
+	        android:background="@android:color/white" >
+	    </RelativeLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginRight="16dp"
+	        android:layout_toEndOf="@+id/mapRelativeLayout" >
+	        <ImageView 
+	            android:id="@+id/diseaseSmallImg"
+	            android:layout_width="40dp"
+	            android:layout_height="40dp"/>
+	        <TextView 
+	            android:id="@+id/diseaseDetailTxt"
+	            android:layout_marginLeft="13dp"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textSize="17sp"
+	            android:textColor="#b1b1b1"
+	            android:text="" />
+	    </LinearLayout>
+	    <LinearLayout 
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:textSize="17sp"
-            android:textColor="#b1b1b1" />
-    </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentBottom="true" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="9dp" >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#797979"
+                    android:text="감염자 수 : " />
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13dp"
+                    android:textSize="20sp"
+                    android:textColor="#797979"
+                    android:text="최초 발생 횟수 :  " />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="9dp" >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#797979"
+                    android:text="24,531" />
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#797979"
+                    android:text="300" />
+            </LinearLayout>
+        </LinearLayout>
+        
+        <TextView 
+            android:id="@+id/diseaseDetailPercent"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="3dp"
+            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+            android:textSize="65sp"
+            android:textColor="#ff6f29"
+            android:layout_toLeftOf="@+id/percentimg"
+            android:layout_alignParentBottom="true"
+            android:text="0" />
+        <ImageView 
+            android:id="@+id/percentimg"
+            android:background="@drawable/detail_view_percent_04"
+            android:layout_marginBottom="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="17dp"
+            android:layout_height="41dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true" />
+        
+    </RelativeLayout>    
 </RelativeLayout>

@@ -80,7 +80,7 @@ public class DBUtil {
         
         String name = null;
         if (null != cursor && cursor.moveToFirst()) {
-        	name = cursor.getString(cursor.getColumnIndex(Consts.USER_CONT_COUNT));
+        	name = cursor.getString(cursor.getColumnIndex(Consts.DISEASE_NAME));
         }
 
         return name;

@@ -63,29 +63,31 @@ public final class R {
         public static final int white_eyeballs=0x7f020023;
     }
     public static final class id {
-        public static final int action_settings=0x7f080016;
-        public static final int closeNewsButton=0x7f080011;
+        public static final int action_settings=0x7f080018;
+        public static final int closeNewsButton=0x7f080013;
+        public static final int diseaseDetailPercent=0x7f080003;
         public static final int diseaseDetailTxt=0x7f080002;
         public static final int diseaseSmallImg=0x7f080001;
-        public static final int disimg0=0x7f080003;
-        public static final int disimg1=0x7f080005;
-        public static final int disimg2=0x7f080007;
-        public static final int disimg3=0x7f080009;
-        public static final int dispercent0=0x7f080004;
-        public static final int dispercent1=0x7f080006;
-        public static final int dispercent2=0x7f080008;
-        public static final int dispercent3=0x7f08000a;
-        public static final int firstcarrierokaybutton=0x7f08000b;
+        public static final int disimg0=0x7f080005;
+        public static final int disimg1=0x7f080007;
+        public static final int disimg2=0x7f080009;
+        public static final int disimg3=0x7f08000b;
+        public static final int dispercent0=0x7f080006;
+        public static final int dispercent1=0x7f080008;
+        public static final int dispercent2=0x7f08000a;
+        public static final int dispercent3=0x7f08000c;
+        public static final int firstcarrierokaybutton=0x7f08000d;
         public static final int mapRelativeLayout=0x7f080000;
-        public static final int menu_settings=0x7f080015;
-        public static final int newscontent1=0x7f080013;
-        public static final int newsimage1=0x7f080012;
-        public static final int noncarrierokaybutton=0x7f080014;
-        public static final int openDiseaseListButton=0x7f08000d;
-        public static final int openNewsButton=0x7f08000c;
-        public static final int statusDiseaseCount=0x7f080010;
-        public static final int statusImgView=0x7f08000f;
-        public static final int statusTxtView=0x7f08000e;
+        public static final int menu_settings=0x7f080017;
+        public static final int newscontent1=0x7f080015;
+        public static final int newsimage1=0x7f080014;
+        public static final int noncarrierokaybutton=0x7f080016;
+        public static final int openDiseaseListButton=0x7f08000f;
+        public static final int openNewsButton=0x7f08000e;
+        public static final int percentimg=0x7f080004;
+        public static final int statusDiseaseCount=0x7f080012;
+        public static final int statusImgView=0x7f080011;
+        public static final int statusTxtView=0x7f080010;
     }
     public static final class layout {
         public static final int activity_disease_detail=0x7f030000;
